@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>my-project</title>
+    <script type="text/javascript" src="./../node_modules/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./../node_modules/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="./../node_modules/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="./../dist/vue-drag-infinite.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <vue-drag-infinite :json="abc" :name="name" @save="saveJson"></vue-drag-infinite>
+    </div>
+    <script type="text/javascript">
+      new Vue({
+        el:'#app',
+        data: function() {
+          return { 
+              name:'哈哈哈',
+              abc:[
+                {
+                 style:{
+                   width:"150px",
+                   height:"150px",
+                   fontSize:"14px",
+                   color:"#fff",
+                   left:"50px",
+                   backgroundColor:"#999"
+                 },
+                 text:'这是第一个'
+                },
+                {
+                 style:{
+                   width:"100px",
+                   height:"100px",
+                   fontSize:"14px",
+                   color:"#fff",
+                   backgroundColor:"#333"
+                 },
+                 text:'这是第二个'
+                }
+              ]
+          }
+        },
+        methods:{
+          saveJson:function(data){
+            console.log(data)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
